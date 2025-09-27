@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>静观流宣传折页</title>
     <style>
         /* 重置默认样式 */
@@ -17,6 +17,7 @@
             background-color: #f5f0e6; /* 米色背景 */
             color: #333;
             line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* 防止iOS Safari字体缩放 */
         }
         
         .header {
@@ -127,6 +128,7 @@
             margin: 0 auto;
             max-width: 180px;
             margin-bottom: 10px;
+            text-align: center;
         }
         
         .download-btn:hover {
@@ -139,7 +141,7 @@
             transform: translateY(0);
         }
         
-        .deployment-info {
+        .instructions {
             text-align: center;
             margin: 20px 0;
             padding: 15px;
@@ -148,10 +150,16 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        .deployment-title {
+        .instructions-title {
             font-size: 18px;
             margin-bottom: 10px;
             color: #5a5047;
+        }
+        
+        .instructions-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
         }
         
         .footer {
@@ -174,11 +182,23 @@
             .image-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .download-btn {
+                width: 100%;
+                max-width: 200px;
+            }
         }
         
-        /* 确保容器高度足够 */
-        .page-content {
-            min-height: calc(100vh - 150px); /* 确保内容区域有足够高度 */
+        /* 微信浏览器特殊样式 */
+        .wechat-tip {
+            display: none;
+            background: #fff3cd;
+            color: #856404;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -188,50 +208,57 @@
         <p>长按图片或点击下方按钮保存高清版本</p>
     </div>
 
-    <div class="container page-content">
-        <div class="deployment-info">
-            <div class="deployment-title">静观流宣传资料</div>
-            <p>以下是完整的宣传图片内容</p>
+    <div class="container">
+        <div class="wechat-tip">
+            <strong>提示：</strong> 如需下载图片，请点击右上角选择"在浏览器中打开"
+        </div>
+        
+        <div class="instructions">
+            <div class="instructions-title">使用说明</div>
+            <div class="instructions-content">
+                <p>长按下方图片可直接保存到手机相册</p>
+                <p>微信内置浏览器下载功能有限，建议点击右上角选择"在浏览器中打开"获取完整功能</p>
+            </div>
         </div>
         
         <div class="image-grid">
             <!-- 图片1 -->
             <div class="image-card">
                 <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&from=appmsg" alt="宣传图1" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片1</text></svg>';">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图1" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U5ZTRkNCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSAxPC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
                 </div>
                 <div class="caption">
-                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&from=appmsg" download="宣传图1.jpg" class="download-btn">下载图片 1</a>
+                    <button class="download-btn" onclick="saveImage(1)">保存图片 1</button>
                 </div>
             </div>
 
             <!-- 图片2 -->
             <div class="image-card">
                 <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&from=appmsg" alt="宣传图2" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片2</text></svg>';">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图2" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2Q4ZjJjYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSAyPC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
                 </div>
                 <div class="caption">
-                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&from=appmsg" download="宣传图2.jpg" class="download-btn">下载图片 2</a>
+                    <button class="download-btn" onclick="saveImage(2)">保存图片 2</button>
                 </div>
             </div>
 
             <!-- 图片3 -->
             <div class="image-card">
                 <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&from=appmsg" alt="宣传图3" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片3</text></svg>';">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图3" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2M2ZjRkZCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSAzPC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
                 </div>
                 <div class="caption">
-                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&from=appmsg" download="宣传图3.jpg" class="download-btn">下载图片 3</a>
+                    <button class="download-btn" onclick="saveImage(3)">保存图片 3</button>
                 </div>
             </div>
 
             <!-- 图片4 -->
             <div class="image-card">
                 <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&from=appmsg" alt="宣传图4" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片4</text></svg>';">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图4" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YyZjJjYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSA0PC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
                 </div>
                 <div class="caption">
-                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&from=appmsg" download="宣传图4.jpg" class="download-btn">下载图片 4</a>
+                    <button class="download-btn" onclick="saveImage(4)">保存图片 4</button>
                 </div>
             </div>
         </div>
@@ -240,6 +267,57 @@
     <div class="footer">
         <p>© 2025 静观流宣传中心. 保留所有权利.</p>
     </div>
+
+    <script>
+        // 微信浏览器检测
+        function isWechatBrowser() {
+            return /micromessenger/i.test(navigator.userAgent);
+        }
+        
+        // 显示微信提示
+        if (isWechatBrowser()) {
+            document.querySelector('.wechat-tip').style.display = 'block';
+        }
+        
+        // 保存图片功能
+        function saveImage(imageNum) {
+            if (isWechatBrowser()) {
+                alert('请长按图片并选择"保存图片"或"保存到手机"来下载图片');
+            } else {
+                alert('点击"下载图片"按钮或右键图片选择"另存为"来保存图片');
+            }
+        }
+        
+        // 添加长按事件监听
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.image-card img');
+            images.forEach(img => {
+                // 添加长按保存提示
+                img.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                    if (isWechatBrowser()) {
+                        alert('请长按图片并选择"保存图片"或"保存到手机"来下载');
+                    } else {
+                        alert('右键选择"另存为"或"保存图片"来下载');
+                    }
+                });
+                
+                // 添加touch事件支持
+                let touchStartTime;
+                img.addEventListener('touchstart', function() {
+                    touchStartTime = new Date().getTime();
+                });
+                
+                img.addEventListener('touchend', function(e) {
+                    const touchDuration = new Date().getTime() - touchStartTime;
+                    if (touchDuration > 500) { // 长按超过500ms
+                        e.preventDefault();
+                        alert('请长按图片并选择"保存图片"或"保存到手机"来下载');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
