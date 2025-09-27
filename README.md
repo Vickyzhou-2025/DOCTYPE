@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!静观流折页 html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -225,101 +225,9 @@
             <!-- 图片1 -->
             <div class="image-card">
                 <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图1" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2U5ZTRkNCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSAxPC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
-                </div>
-                <div class="caption">
-                    <button class="download-btn" onclick="saveImage(1)">保存图片 1</button>
-                </div>
-            </div>
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAHgAoADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/igAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAK......明白了！我需要创建一个完全本地化的版本，将所有图片内容都嵌入到HTML中，避免依赖外部链接和域名限制。以下是优化后的版本：
 
-            <!-- 图片2 -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图2" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2Q4ZjJjYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSAyPC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
-                </div>
-                <div class="caption">
-                    <button class="download-btn" onclick="saveImage(2)">保存图片 2</button>
-                </div>
-            </div>
-
-            <!-- 图片3 -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图3" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2M2ZjRkZCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSAzPC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
-                </div>
-                <div class="caption">
-                    <button class="download-btn" onclick="saveImage(3)">保存图片 3</button>
-                </div>
-            </div>
-
-            <!-- 图片4 -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&from=appmsg" alt="静观流宣传图4" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YyZjJjYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPlN2ZyBQaWN0dXJlIDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5JbWFnZSA0PC90ZXh0Pjwvc3ZnPg=='; this.onerror=null;">
-                </div>
-                <div class="caption">
-                    <button class="download-btn" onclick="saveImage(4)">保存图片 4</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer">
-        <p>© 2025 静观流宣传中心. 保留所有权利.</p>
-    </div>
-
-    <script>
-        // 微信浏览器检测
-        function isWechatBrowser() {
-            return /micromessenger/i.test(navigator.userAgent);
-        }
-        
-        // 显示微信提示
-        if (isWechatBrowser()) {
-            document.querySelector('.wechat-tip').style.display = 'block';
-        }
-        
-        // 保存图片功能
-        function saveImage(imageNum) {
-            if (isWechatBrowser()) {
-                alert('请长按图片并选择"保存图片"或"保存到手机"来下载图片');
-            } else {
-                alert('点击"下载图片"按钮或右键图片选择"另存为"来保存图片');
-            }
-        }
-        
-        // 添加长按事件监听
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.image-card img');
-            images.forEach(img => {
-                // 添加长按保存提示
-                img.addEventListener('contextmenu', function(e) {
-                    e.preventDefault();
-                    if (isWechatBrowser()) {
-                        alert('请长按图片并选择"保存图片"或"保存到手机"来下载');
-                    } else {
-                        alert('右键选择"另存为"或"保存图片"来下载');
-                    }
-                });
-                
-                // 添加touch事件支持
-                let touchStartTime;
-                img.addEventListener('touchstart', function() {
-                    touchStartTime = new Date().getTime();
-                });
-                
-                img.addEventListener('touchend', function(e) {
-                    const touchDuration = new Date().getTime() - touchStartTime;
-                    if (touchDuration > 500) { // 长按超过500ms
-                        e.preventDefault();
-                        alert('请长按图片并选择"保存图片"或"保存到手机"来下载');
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+[<title="静观流宣传折页（全本地化版本 - 国内可用）">]
 
 
 
