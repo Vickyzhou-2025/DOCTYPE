@@ -1,285 +1,247 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.3px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d; background-color: #fffffe}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.3px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff; background-color: #fffffe}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.3px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001; background-color: #fffffe}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.3px Menlo; -webkit-text-stroke: #000000; background-color: #fffffe}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.3px Menlo; color: #0f7001; -webkit-text-stroke: #0f7001; background-color: #fffffe}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; -webkit-text-stroke: #000000}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: justify; font: 14.0px Times; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none; color: #0000ff; -webkit-text-stroke: 0px #0000ff}
-    span.s2 {font-kerning: none}
-    span.s3 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
-    span.s4 {font-kerning: none; color: #fb0007; -webkit-text-stroke: 0px #fb0007}
-    span.s5 {font-kerning: none; color: #6b0001; -webkit-text-stroke: 0px #6b0001}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静观流宣传折页</title>
+    <style>
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f0e6; /* 米色背景 */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #8B7355, #A0916B); /* 深米色渐变头部 */
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin-top: 8px;
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .container {
+            padding: 30px 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .image-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 100%; /* 1:1 比例 */
+        }
+        
+        .image-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .caption {
+            padding: 20px 15px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #8B7355, #A0916B); /* 米色系按钮 */
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(139, 115, 85, 0.3);
+            margin: 0 auto;
+            max-width: 180px;
+            margin-bottom: 10px;
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(to right, #A0916B, #B8A987); /* 悬停时按钮颜色变浅 */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 115, 85, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .deployment-info {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .deployment-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #5a5047;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 确保容器高度足够 */
+        .page-content {
+            min-height: calc(100vh - 150px); /* 确保内容区域有足够高度 */
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!</span><span class="s2">DOCTYPE</span><span class="s3"> </span><span class="s4">html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">html</span><span class="s3"> </span><span class="s4">lang</span><span class="s3">=</span><span class="s2">"zh-CN"&gt;</span></p>
-<p class="p3"><span class="s1">&lt;</span><span class="s2">head</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">meta</span><span class="s3"> </span><span class="s4">charset</span><span class="s3">=</span><span class="s2">"UTF-8"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">meta</span><span class="s3"> </span><span class="s4">name</span><span class="s3">=</span><span class="s2">"viewport"</span><span class="s3"> </span><span class="s4">content</span><span class="s3">=</span><span class="s2">"width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p3"><span class="s1">&lt;</span><span class="s2">title</span><span class="s1">&gt;</span><span class="s3">静观流宣传折页</span><span class="s1">&lt;/</span><span class="s2">title</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;</span><span class="s2">style</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2">/* 重置默认样式 */</span></p>
-<p class="p4"><span class="s2">* {</span></p>
-<p class="p4"><span class="s2">margin: 0;</span></p>
-<p class="p4"><span class="s2">padding: 0;</span></p>
-<p class="p4"><span class="s2">box-sizing: border-box;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">body {</span></p>
-<p class="p4"><span class="s2">font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;</span></p>
-<p class="p4"><span class="s2">background-color: #f5f0e6; /* 米色背景 */</span></p>
-<p class="p4"><span class="s2">color: #333;</span></p>
-<p class="p4"><span class="s2">line-height: 1.6;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.header {</span></p>
-<p class="p4"><span class="s2">background: linear-gradient(to right, #8B7355, #A0916B); /* 深米色渐变头部 */</span></p>
-<p class="p4"><span class="s2">color: white;</span></p>
-<p class="p4"><span class="s2">padding: 30px 20px;</span></p>
-<p class="p4"><span class="s2">text-align: center;</span></p>
-<p class="p4"><span class="s2">box-shadow: 0 4px 12px rgba(0,0,0,0.1);</span></p>
-<p class="p4"><span class="s2">position: relative;</span></p>
-<p class="p4"><span class="s2">overflow: hidden;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.header::before {</span></p>
-<p class="p4"><span class="s2">content: '';</span></p>
-<p class="p4"><span class="s2">position: absolute;</span></p>
-<p class="p4"><span class="s2">top: -50%;</span></p>
-<p class="p4"><span class="s2">left: -50%;</span></p>
-<p class="p4"><span class="s2">width: 200%;</span></p>
-<p class="p4"><span class="s2">height: 200%;</span></p>
-<p class="p4"><span class="s2">background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);</span></p>
-<p class="p4"><span class="s2">transform: rotate(30deg);</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.header h1 {</span></p>
-<p class="p4"><span class="s2">margin: 0;</span></p>
-<p class="p4"><span class="s2">font-size: 28px;</span></p>
-<p class="p4"><span class="s2">font-weight: 600;</span></p>
-<p class="p4"><span class="s2">position: relative;</span></p>
-<p class="p4"><span class="s2">text-shadow: 0 2px 4px rgba(0,0,0,0.3);</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.header p {</span></p>
-<p class="p4"><span class="s2">margin-top: 8px;</span></p>
-<p class="p4"><span class="s2">font-size: 16px;</span></p>
-<p class="p4"><span class="s2">opacity: 0.9;</span></p>
-<p class="p4"><span class="s2">position: relative;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.container {</span></p>
-<p class="p4"><span class="s2">padding: 30px 15px;</span></p>
-<p class="p4"><span class="s2">max-width: 900px;</span></p>
-<p class="p4"><span class="s2">margin: 0 auto;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.image-grid {</span></p>
-<p class="p4"><span class="s2">display: grid;</span></p>
-<p class="p4"><span class="s2">grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));</span></p>
-<p class="p4"><span class="s2">gap: 25px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.image-card {</span></p>
-<p class="p4"><span class="s2">background-color: #fff;</span></p>
-<p class="p4"><span class="s2">border-radius: 12px;</span></p>
-<p class="p4"><span class="s2">box-shadow: 0 6px 16px rgba(0,0,0,0.1);</span></p>
-<p class="p4"><span class="s2">overflow: hidden;</span></p>
-<p class="p4"><span class="s2">transition: transform 0.3s ease, box-shadow 0.3s ease;</span></p>
-<p class="p4"><span class="s2">display: flex;</span></p>
-<p class="p4"><span class="s2">flex-direction: column;</span></p>
-<p class="p4"><span class="s2">height: 100%;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.image-card:hover {</span></p>
-<p class="p4"><span class="s2">transform: translateY(-8px);</span></p>
-<p class="p4"><span class="s2">box-shadow: 0 12px 24px rgba(0,0,0,0.15);</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.image-container {</span></p>
-<p class="p4"><span class="s2">position: relative;</span></p>
-<p class="p4"><span class="s2">overflow: hidden;</span></p>
-<p class="p4"><span class="s2">padding-top: 100%; /* 1:1 比例 */</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.image-card img {</span></p>
-<p class="p4"><span class="s2">position: absolute;</span></p>
-<p class="p4"><span class="s2">top: 0;</span></p>
-<p class="p4"><span class="s2">left: 0;</span></p>
-<p class="p4"><span class="s2">width: 100%;</span></p>
-<p class="p4"><span class="s2">height: 100%;</span></p>
-<p class="p4"><span class="s2">object-fit: cover;</span></p>
-<p class="p4"><span class="s2">transition: transform 0.5s ease;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.image-card:hover img {</span></p>
-<p class="p4"><span class="s2">transform: scale(1.05);</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.caption {</span></p>
-<p class="p4"><span class="s2">padding: 20px 15px;</span></p>
-<p class="p4"><span class="s2">text-align: center;</span></p>
-<p class="p4"><span class="s2">flex-grow: 1;</span></p>
-<p class="p4"><span class="s2">display: flex;</span></p>
-<p class="p4"><span class="s2">flex-direction: column;</span></p>
-<p class="p4"><span class="s2">justify-content: center;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.download-btn {</span></p>
-<p class="p4"><span class="s2">display: inline-block;</span></p>
-<p class="p4"><span class="s2">background: linear-gradient(to right, #8B7355, #A0916B); /* 米色系按钮 */</span></p>
-<p class="p4"><span class="s2">color: #fff;</span></p>
-<p class="p4"><span class="s2">padding: 12px 24px;</span></p>
-<p class="p4"><span class="s2">text-decoration: none;</span></p>
-<p class="p4"><span class="s2">border-radius: 30px;</span></p>
-<p class="p4"><span class="s2">font-weight: 600;</span></p>
-<p class="p4"><span class="s2">transition: all 0.3s ease;</span></p>
-<p class="p4"><span class="s2">border: none;</span></p>
-<p class="p4"><span class="s2">cursor: pointer;</span></p>
-<p class="p4"><span class="s2">box-shadow: 0 4px 8px rgba(139, 115, 85, 0.3);</span></p>
-<p class="p4"><span class="s2">margin: 0 auto;</span></p>
-<p class="p4"><span class="s2">max-width: 180px;</span></p>
-<p class="p4"><span class="s2">margin-bottom: 10px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.download-btn:hover {</span></p>
-<p class="p4"><span class="s2">background: linear-gradient(to right, #A0916B, #B8A987); /* 悬停时按钮颜色变浅 */</span></p>
-<p class="p4"><span class="s2">transform: translateY(-2px);</span></p>
-<p class="p4"><span class="s2">box-shadow: 0 6px 12px rgba(139, 115, 85, 0.4);</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.download-btn:active {</span></p>
-<p class="p4"><span class="s2">transform: translateY(0);</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.deployment-info {</span></p>
-<p class="p4"><span class="s2">text-align: center;</span></p>
-<p class="p4"><span class="s2">margin: 20px 0;</span></p>
-<p class="p4"><span class="s2">padding: 15px;</span></p>
-<p class="p4"><span class="s2">background-color: rgba(255, 255, 255, 0.7);</span></p>
-<p class="p4"><span class="s2">border-radius: 10px;</span></p>
-<p class="p4"><span class="s2">box-shadow: 0 2px 8px rgba(0,0,0,0.1);</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.deployment-title {</span></p>
-<p class="p4"><span class="s2">font-size: 18px;</span></p>
-<p class="p4"><span class="s2">margin-bottom: 10px;</span></p>
-<p class="p4"><span class="s2">color: #5a5047;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.deployment-steps {</span></p>
-<p class="p4"><span class="s2">text-align: left;</span></p>
-<p class="p4"><span class="s2">max-width: 600px;</span></p>
-<p class="p4"><span class="s2">margin: 0 auto;</span></p>
-<p class="p4"><span class="s2">padding-left: 20px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.deployment-steps ol {</span></p>
-<p class="p4"><span class="s2">padding-left: 20px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.deployment-steps li {</span></p>
-<p class="p4"><span class="s2">margin: 10px 0;</span></p>
-<p class="p4"><span class="s2">line-height: 1.6;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.example-url {</span></p>
-<p class="p4"><span class="s2">background-color: #e9e4d4;</span></p>
-<p class="p4"><span class="s2">padding: 10px;</span></p>
-<p class="p4"><span class="s2">border-radius: 8px;</span></p>
-<p class="p4"><span class="s2">margin: 10px 0;</span></p>
-<p class="p4"><span class="s2">font-family: monospace;</span></p>
-<p class="p4"><span class="s2">word-break: break-all;</span></p>
-<p class="p4"><span class="s2">text-align: center;</span></p>
-<p class="p4"><span class="s2">color: #2c3e50;</span></p>
-<p class="p4"><span class="s2">font-weight: bold;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.highlight {</span></p>
-<p class="p4"><span class="s2">background-color: #ffeaa7;</span></p>
-<p class="p4"><span class="s2">padding: 2px 4px;</span></p>
-<p class="p4"><span class="s2">border-radius: 3px;</span></p>
-<p class="p4"><span class="s2">font-weight: 600;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.footer {</span></p>
-<p class="p4"><span class="s2">text-align: center;</span></p>
-<p class="p4"><span class="s2">padding: 20px;</span></p>
-<p class="p4"><span class="s2">color: #7f8c8d;</span></p>
-<p class="p4"><span class="s2">font-size: 14px;</span></p>
-<p class="p4"><span class="s2">margin-top: 20px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">@media (max-width: 768px) {</span></p>
-<p class="p4"><span class="s2">.header h1 {</span></p>
-<p class="p4"><span class="s2">font-size: 24px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.container {</span></p>
-<p class="p4"><span class="s2">padding: 20px 10px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.image-grid {</span></p>
-<p class="p4"><span class="s2">grid-template-columns: 1fr;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.deployment-steps {</span></p>
-<p class="p4"><span class="s2">padding-left: 10px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">.deployment-steps ol {</span></p>
-<p class="p4"><span class="s2">padding-left: 15px;</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p4"><span class="s2">}</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">style</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">head</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;</span><span class="s2">body</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"header"&gt;</span></p>
-<p class="p4"><span class="s1">&lt;</span><span class="s5">h1</span><span class="s1">&gt;</span><span class="s2">静观流宣传折页</span><span class="s1">&lt;/</span><span class="s5">h1</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s1">&lt;</span><span class="s5">p</span><span class="s1">&gt;</span><span class="s2">长按图片或点击下方按钮保存高清版本</span><span class="s1">&lt;/</span><span class="s5">p</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"> </span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"container"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"deployment-info"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"deployment-title"&gt;</span><span class="s3">部署信息</span><span class="s2">&lt;/</span><span class="s5">div</span><span class="s2">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"deployment-steps"&gt;</span></p>
-<p class="p4"><span class="s1">&lt;</span><span class="s5">p</span><span class="s1">&gt;</span><span class="s2">您的网站已成功部署到 GitHub Pages！</span><span class="s1">&lt;/</span><span class="s5">p</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s1">&lt;</span><span class="s5">p</span><span class="s1">&gt;</span><span class="s2">访问地址：</span><span class="s1">&lt;/</span><span class="s5">p</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"example-url"&gt;</span></p>
-<p class="p4"><span class="s2">https://</span><span class="s1">&lt;</span><span class="s5">span</span><span class="s2"> </span><span class="s4">class</span><span class="s2">=</span><span class="s1">"highlight"&gt;</span><span class="s2">您的用户名</span><span class="s1">&lt;/</span><span class="s5">span</span><span class="s1">&gt;</span><span class="s2">.github.io/</span><span class="s1">&lt;</span><span class="s5">span</span><span class="s2"> </span><span class="s4">class</span><span class="s2">=</span><span class="s1">"highlight"&gt;</span><span class="s2">chanmiao</span><span class="s1">&lt;/</span><span class="s5">span</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s1">&lt;</span><span class="s5">p</span><span class="s1">&gt;</span><span class="s2">请将 </span><span class="s1">&lt;</span><span class="s5">span</span><span class="s2"> </span><span class="s4">class</span><span class="s2">=</span><span class="s1">"highlight"&gt;</span><span class="s2">您的用户名</span><span class="s1">&lt;/</span><span class="s5">span</span><span class="s1">&gt;</span><span class="s2"> 替换为您的实际 GitHub 用户名</span><span class="s1">&lt;/</span><span class="s5">p</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-grid"&gt;</span></p>
-<p class="p5"><span class="s2">&lt;!-- 图片1 --&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-card"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-container"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">img</span><span class="s3"> </span><span class="s4">src</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">alt</span><span class="s3">=</span><span class="s2">"宣传图1"&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"caption"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">a</span><span class="s3"> </span><span class="s4">href</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">download</span><span class="s3">=</span><span class="s2">"宣传图1.jpg"</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"download-btn"&gt;</span><span class="s3">下载图片 1</span><span class="s2">&lt;/</span><span class="s5">a</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p6"><span class="s2"> </span></p>
-<p class="p5"><span class="s2">&lt;!-- 图片2 --&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-card"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-container"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">img</span><span class="s3"> </span><span class="s4">src</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">alt</span><span class="s3">=</span><span class="s2">"宣传图2"&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"caption"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">a</span><span class="s3"> </span><span class="s4">href</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">download</span><span class="s3">=</span><span class="s2">"宣传图2.jpg"</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"download-btn"&gt;</span><span class="s3">下载图片 2</span><span class="s2">&lt;/</span><span class="s5">a</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p6"><span class="s2"> </span></p>
-<p class="p5"><span class="s2">&lt;!-- 图片3 --&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-card"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-container"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">img</span><span class="s3"> </span><span class="s4">src</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">alt</span><span class="s3">=</span><span class="s2">"宣传图3"&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"caption"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">a</span><span class="s3"> </span><span class="s4">href</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">download</span><span class="s3">=</span><span class="s2">"宣传图3.jpg"</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"download-btn"&gt;</span><span class="s3">下载图片 3</span><span class="s2">&lt;/</span><span class="s5">a</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p6"><span class="s2"> </span></p>
-<p class="p5"><span class="s2">&lt;!-- 图片4 --&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-card"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"image-container"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">img</span><span class="s3"> </span><span class="s4">src</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">alt</span><span class="s3">=</span><span class="s2">"宣传图4"&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"caption"&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">a</span><span class="s3"> </span><span class="s4">href</span><span class="s3">=</span><span class="s2">"https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&amp;from=appmsg"</span><span class="s3"> </span><span class="s4">download</span><span class="s3">=</span><span class="s2">"宣传图4.jpg"</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"download-btn"&gt;</span><span class="s3">下载图片 4</span><span class="s2">&lt;/</span><span class="s5">a</span><span class="s2">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s2">&lt;</span><span class="s5">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"footer"&gt;</span></p>
-<p class="p4"><span class="s1">&lt;</span><span class="s5">p</span><span class="s1">&gt;</span><span class="s2">© 2025 静观流宣传中心. 保留所有权利.</span><span class="s1">&lt;/</span><span class="s5">p</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">body</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s1">&lt;/</span><span class="s2">html</span><span class="s1">&gt;</span></p>
-<p class="p7"><span class="s2"> </span></p>
+    <div class="header">
+        <h1>静观流宣传折页</h1>
+        <p>长按图片或点击下方按钮保存高清版本</p>
+    </div>
+
+    <div class="container page-content">
+        <div class="deployment-info">
+            <div class="deployment-title">静观流宣传资料</div>
+            <p>以下是完整的宣传图片内容</p>
+        </div>
+        
+        <div class="image-grid">
+            <!-- 图片1 -->
+            <div class="image-card">
+                <div class="image-container">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&from=appmsg" alt="宣传图1" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片1</text></svg>';">
+                </div>
+                <div class="caption">
+                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauOAyIz8scJ7fntibfMJakJOHUMCR2CYDHIk5LCSYy0ZiakalEGdBFNCsQ/640?wx_fmt=jpeg&from=appmsg" download="宣传图1.jpg" class="download-btn">下载图片 1</a>
+                </div>
+            </div>
+
+            <!-- 图片2 -->
+            <div class="image-card">
+                <div class="image-container">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&from=appmsg" alt="宣传图2" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片2</text></svg>';">
+                </div>
+                <div class="caption">
+                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauibb3PXnrZPxG2ecDWbI4xzF2K6jpIwAf10YwZmicWzLe9icQlE0eBVaww/640?wx_fmt=jpeg&from=appmsg" download="宣传图2.jpg" class="download-btn">下载图片 2</a>
+                </div>
+            </div>
+
+            <!-- 图片3 -->
+            <div class="image-card">
+                <div class="image-container">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&from=appmsg" alt="宣传图3" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片3</text></svg>';">
+                </div>
+                <div class="caption">
+                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauMOeNhTyYcCGRwHtibavG7n2GeH0I4I1sH4nl6un2pFVVTCH08XZvs1w/640?wx_fmt=jpeg&from=appmsg" download="宣传图3.jpg" class="download-btn">下载图片 3</a>
+                </div>
+            </div>
+
+            <!-- 图片4 -->
+            <div class="image-card">
+                <div class="image-container">
+                    <img src="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&from=appmsg" alt="宣传图4" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 200 200\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/><text x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'14\' fill=\'%23999\' text-anchor=\'middle\' dominant-baseline=\'middle\'>图片4</text></svg>';">
+                </div>
+                <div class="caption">
+                    <a href="https://mmecoa.qpic.cn/sz_mmecoa_jpg/JibKLz5djzGsuBElZSWupDF1JbXKSvvauBdQiaVKlmYDBntIK80pCxnFgcsbVgn9wfkN4GRDy4N9eckhfnrShxUg/640?wx_fmt=jpeg&from=appmsg" download="宣传图4.jpg" class="download-btn">下载图片 4</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 静观流宣传中心. 保留所有权利.</p>
+    </div>
 </body>
 </html>
+
+
+
